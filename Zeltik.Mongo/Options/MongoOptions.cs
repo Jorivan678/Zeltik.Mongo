@@ -1,15 +1,26 @@
-﻿namespace Microsoft.Extensions.Options
+﻿using Zeltik.Mongo;
+
+namespace Microsoft.Extensions.Options
 {
+    /// <summary>
+    /// Una clase básica para establecer la opciones de conexión para
+    /// las clases que hereden de <see cref="MongoDbContext"/>.
+    /// </summary>
     public class MongoOptions
     {
+        /// <summary>
+        /// La cadena de conexión.
+        /// </summary>
         public string ConnectionString { get; private set; }
 
+        /// <summary>
+        /// El nombre de la base de datos.
+        /// </summary>
         public string DatabaseName { get; private set; }
 
         /// <summary>
         /// Establece la cadena de conexión.
         /// </summary>
-        /// <param name="configuration"></param>
         /// <param name="connectionString"></param>
         /// <returns>La misma instancia de <see cref="MongoOptions"/>.</returns>
         /// <exception cref="ArgumentNullException"></exception>
@@ -26,7 +37,6 @@
         /// <summary>
         /// Establece el nombre de la base de datos a utilizar desde MongoDB.
         /// </summary>
-        /// <param name="configuration"></param>
         /// <param name="databaseName"></param>
         /// <returns>La misma instancia de <see cref="MongoOptions"/>.</returns>
         /// <exception cref="ArgumentNullException"></exception>

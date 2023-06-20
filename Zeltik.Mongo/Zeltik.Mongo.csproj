@@ -13,6 +13,10 @@
     <NeutralLanguage>es-MX</NeutralLanguage>
     <PackageIcon>MonO.png</PackageIcon>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryType>GIT</RepositoryType>
+    <RepositoryUrl>https://github.com/Jorivan678/Zeltik.Mongo</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -32,6 +36,8 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+    <None Include="..\readme.md" Pack="true" PackagePath="\" />
+    <None Include="..\LICENSE" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>

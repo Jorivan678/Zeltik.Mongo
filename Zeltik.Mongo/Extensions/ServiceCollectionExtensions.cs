@@ -3,6 +3,9 @@ using Zeltik.Mongo;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
+    /// <summary>
+    /// Métodos de extensión para <see cref="IServiceCollection"/>.
+    /// </summary>
     public static class ServiceCollectionExtensions
     {
         /// <summary>

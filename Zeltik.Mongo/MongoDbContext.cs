@@ -37,8 +37,19 @@ namespace Zeltik.Mongo
         }
         private MongoOptions? Options { get; }
 
+        /// <summary>
+        /// Constructor: Utilizado normalmente para la inyección de opciones.
+        /// </summary>
+        /// <param name="options">Las opciones por inyección.</param>
         protected MongoDbContext(IOptions<MongoOptions> options) : this(options.Value) { }
 
+        /// <summary>
+        /// Constructor: Utilizado para escribir directamente las opciones o pasar las opciones
+        /// desde el constructor de la clase que lo hereda.
+        /// </summary>
+        /// <param name="options">Las opciones.</param>
+        /// <param name="enableAutoInit">Si se mantiene en <see langword="true"/>, se inicializa automáticamente, de lo contrario
+        /// utilice <see cref="Initialize"/>.</param>
         protected MongoDbContext(MongoOptions options, bool enableAutoInit = true)
         {
             if (enableAutoInit)
@@ -67,6 +78,10 @@ namespace Zeltik.Mongo
             }
         }
 
+        /// <summary>
+        /// Comprueba la inicialización del cliente de MongoDB.
+        /// </summary>
+        /// <exception cref="InvalidOperationException"></exception>
         protected void EnsureInitialized()
         {
             if (_client is not null) return;
@@ -83,7 +98,7 @@ namespace Zeltik.Mongo
         /// </summary>
         /// <typeparam name="TEntity"></typeparam>
         /// <param name="collectionName"></param>
-        /// <returns></returns>
+        /// <returns>La colección específica obtenida de la base de datos.</returns>
         protected IMongoCollection<TEntity> GetCollection<TEntity>(string collectionName) 
             where TEntity : class
         {
