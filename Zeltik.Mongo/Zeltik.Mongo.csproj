@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>Zeltik.Mongo.PersonalExtensions</PackageId>
+    <VersionPrefix>0.0.0.1</VersionPrefix>
+    <VersionSuffix>Alpha</VersionSuffix>
+    <Authors>Jorivan678(AKA: Zeltik)</Authors>
+    <Company>MySelf</Company>
+    <Description>This MongoDB Extension is packaged for my own personal use. Do not use it if you do not want to have a headache.</Description>
+    <NeutralLanguage>es-MX</NeutralLanguage>
+    <PackageIcon>MonO.png</PackageIcon>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\kids3\Pictures\MonO.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.19.2" />
+  </ItemGroup>
+
+</Project>
